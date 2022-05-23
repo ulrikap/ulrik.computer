@@ -1,10 +1,11 @@
-import { ISectionProps } from "@view/components/Section";
+import { ILinkProps } from "@view/components/Link";
 import { ISimpleCanvasProps } from "@view/components/SimpleCanvas";
 import { IHeaderProps } from "@view/compositions/Header";
 
 interface ILandingProps {
   HeaderProps: IHeaderProps;
   CanvasProps: ISimpleCanvasProps;
+  LinkProps: ILinkProps;
 }
 
 const useLanding = (): ILandingProps => {
@@ -18,6 +19,11 @@ const useLanding = (): ILandingProps => {
       id: "game-surface",
       height: "800px",
       width: "800px",
+    },
+    LinkProps: {
+      ReactRouterLinkProps: {
+        to: "/blog",
+      },
     },
   };
 };

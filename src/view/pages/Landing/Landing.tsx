@@ -1,13 +1,13 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import useLanding from "@domain/pages/useLanding";
 import initTriangle from "@webgl/elements/triangle";
 import Header from "@view/compositions/Header";
 import SimpleCanvas from "@view/components/SimpleCanvas";
 import Section from "@view/components/Section";
+import Link from "@view/components/Link";
 
 export const Landing = () => {
-  const { HeaderProps, CanvasProps } = useLanding();
+  const { HeaderProps, CanvasProps, LinkProps } = useLanding();
 
   useEffect(() => {
     initTriangle();
@@ -18,7 +18,7 @@ export const Landing = () => {
       <Header {...HeaderProps} />
       <Section>
         <SimpleCanvas {...CanvasProps} />
-        <Link to="/blog">Go to blog</Link>
+        <Link {...LinkProps}>Go to blog</Link>
       </Section>
     </>
   );

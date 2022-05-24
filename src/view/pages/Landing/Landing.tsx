@@ -1,25 +1,44 @@
-import { useEffect } from "react";
 import useLanding from "@domain/pages/useLanding";
-import initTriangle from "@webgl/elements/triangle";
 import Header from "@view/compositions/Header";
-import SimpleCanvas from "@view/components/SimpleCanvas";
-import Section from "@view/components/Section";
-import Link from "@view/components/Link";
+import TwoPartSection from "@view/components/TwoPartSection";
+
+export const defaultStyle: React.CSSProperties = {
+  width: "100%",
+  alignItems: "end",
+  fontSize: "7vw",
+  fontWeight: "300",
+  display: "grid",
+  justifyItems: "end",
+  mixBlendMode: "darken",
+  zIndex: "30",
+  transition:
+    " 0.5s" /* Add a transition effect (when scrolling - and font size is decreased) */,
+};
 
 export const Landing = () => {
-  const { HeaderProps, CanvasProps, LinkProps } = useLanding();
-
-  useEffect(() => {
-    initTriangle();
-  }, []);
+  const { HeaderProps } = useLanding();
 
   return (
     <>
       <Header {...HeaderProps} />
-      <Section>
-        <SimpleCanvas {...CanvasProps} />
-        <Link {...LinkProps}>Go to blog</Link>
-      </Section>
+      <section style={defaultStyle}>
+        <TwoPartSection>
+          <div>first</div>
+          <div>second</div>
+        </TwoPartSection>
+        <TwoPartSection reverse={true}>
+          <div>second</div>
+          <div>first</div>
+        </TwoPartSection>
+        <TwoPartSection>
+          <div>second</div>
+          <div>first</div>
+        </TwoPartSection>
+        <TwoPartSection reverse={true}>
+          <div>second</div>
+          <div>first</div>
+        </TwoPartSection>
+      </section>
     </>
   );
 };

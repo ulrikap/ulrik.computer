@@ -1,29 +1,25 @@
-import { ILinkProps } from "@view/components/Link";
-import { ISimpleCanvasProps } from "@view/components/SimpleCanvas";
-import { IHeaderProps } from "@view/compositions/Header";
+import type { IHeaderProps } from "@view/compositions/Header";
 
 interface ILandingProps {
   HeaderProps: IHeaderProps;
-  CanvasProps: ISimpleCanvasProps;
-  LinkProps: ILinkProps;
 }
 
 const useLanding = (): ILandingProps => {
   return {
     HeaderProps: {
       HeaderTitleProps: {
-        title: "Ulriks Website",
+        title: "Frontend & Mobile developer",
       },
-    },
-    CanvasProps: {
-      id: "game-surface",
-      height: "800px",
-      width: "800px",
-    },
-    LinkProps: {
-      ReactRouterLinkProps: {
-        to: "/blog",
-      },
+      options: [
+        {
+          title: "Menu item 1",
+          linkProps: { ReactRouterLinkProps: { to: "/blog" } },
+        },
+        {
+          title: "Menu item 2",
+          linkProps: { ReactRouterLinkProps: { to: "/blog" } },
+        },
+      ],
     },
   };
 };

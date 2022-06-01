@@ -7,10 +7,10 @@ export const defaultStyle: React.CSSProperties = {
   display: "grid",
   gridTemplateColumns: "repeat(2, minmax(0px, 1fr))",
   alignItems: "center",
-  justifyContent: "center",
-  margin: "20px 20px",
-  width: "calc(75vw - ((100vw - 100%)/2))",
-  height: "50vw",
+  justifyItems: "center",
+  margin: "20px 0px",
+  width: "100%",
+  height: "25vw",
 };
 
 const TwoPartSection = (props: ITwoPartSectionProps) => {

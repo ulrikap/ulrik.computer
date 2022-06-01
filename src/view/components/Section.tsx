@@ -9,22 +9,17 @@ export interface ISectionProps {
 }
 
 export const defaultStyle: React.CSSProperties = {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
-  margin: "20px 0",
-  backgroundColor: "red",
-  width: "calc(50vw - ((100vw - 100%)/2))",
-  height: "50vw",
+  display: "grid",
+  alignItems: "start",
+  margin: "auto",
+  width: "80vw",
 };
 
 const Section = (props: ISectionProps) => {
+  const styles = { ...defaultStyle, ...props.SectionProps?.style };
+
   return (
-    <section
-      style={{ ...defaultStyle, justifySelf: props.even ? "end" : "start" }}
-      {...props.SectionProps}
-    >
+    <section style={{ ...styles, justifySelf: props.even ? "end" : "start" }}>
       {" "}
       {props.children}
     </section>

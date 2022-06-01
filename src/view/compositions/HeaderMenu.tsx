@@ -1,5 +1,5 @@
 export interface IHeaderMenuProps {
-  children: React.ReactNode[];
+  children: React.ReactNode | React.ReactNode[];
 }
 
 export const defaultStyle: React.CSSProperties = {

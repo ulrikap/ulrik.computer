@@ -1,44 +1,35 @@
 import useLanding from "@domain/pages/useLanding";
 import Header from "@view/compositions/Header";
 import TwoPartSection from "@view/components/TwoPartSection";
-
-export const defaultStyle: React.CSSProperties = {
-  width: "100%",
-  alignItems: "end",
-  fontSize: "7vw",
-  fontWeight: "300",
-  display: "grid",
-  justifyItems: "end",
-  mixBlendMode: "darken",
-  zIndex: "30",
-  transition:
-    " 0.5s" /* Add a transition effect (when scrolling - and font size is decreased) */,
-};
+import Section from "@view/components/Section";
+import Image from "@view/components/Image";
+import Box from "@webgl/threejs/Box";
 
 export const Landing = () => {
-  const { HeaderProps } = useLanding();
+  const { HeaderProps, WrapperProps, ImageProps, SectionOneProps } =
+    useLanding();
 
   return (
     <>
       <Header {...HeaderProps} />
-      <section style={defaultStyle}>
+      <Section {...WrapperProps}>
         <TwoPartSection>
-          <div>first</div>
+          <Box />
+          <div>Heisann på deisann</div>
+        </TwoPartSection>
+        <TwoPartSection reverse={true}>
+          <div>This is some text to check if this breaks correctly</div>
+          <Image {...ImageProps} />
+        </TwoPartSection>
+        <TwoPartSection>
           <div>second</div>
+          <div>first</div>
         </TwoPartSection>
         <TwoPartSection reverse={true}>
           <div>second</div>
           <div>first</div>
         </TwoPartSection>
-        <TwoPartSection>
-          <div>second</div>
-          <div>first</div>
-        </TwoPartSection>
-        <TwoPartSection reverse={true}>
-          <div>second</div>
-          <div>first</div>
-        </TwoPartSection>
-      </section>
+      </Section>
     </>
   );
 };

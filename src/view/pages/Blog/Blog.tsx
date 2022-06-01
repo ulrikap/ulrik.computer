@@ -9,6 +9,7 @@ import { useEffect } from "react";
 export const Blog = () => {
   const { HeaderProps, LinkProps, CanvasProps } = useBlog();
 
+  // crimes
   useEffect(() => {
     initSpinningCube();
   }, []);

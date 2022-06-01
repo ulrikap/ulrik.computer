@@ -26,7 +26,7 @@ void main(){
 
 function initTriangle() {
   console.log("working!");
-  var canvas = <HTMLCanvasElement>document.getElementById("game-surface");
+  var canvas = <HTMLCanvasElement>document.getElementById("triangle-canvas");
 
   var gl = canvas.getContext("webgl");
 
@@ -37,7 +37,7 @@ function initTriangle() {
     alert("cant run webgl noob");
   }
 
-  gl.clearColor(0.75, 0.85, 0.8, 1.0);
+  gl.clearColor(1, 1, 1, 1.0);
   gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
   var vertexShader = <WebGLShader>gl.createShader(gl.VERTEX_SHADER);

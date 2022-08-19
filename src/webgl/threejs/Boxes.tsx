@@ -6,7 +6,7 @@ import {
   OrbitControls,
 } from "@react-three/drei";
 
-import { useSpring, animated } from "react-spring";
+import { useSpring } from "react-spring";
 
 softShadows();
 
@@ -30,13 +30,14 @@ const SpinningElement = ({
   );
 
   const props = useSpring({
-    scale: expand ? 1.4 : 1,
+    scale: expand ? [1.4, 1.4, 1.4] : [1, 1, 1],
   });
 
   return (
     <mesh
       onClick={() => setExpand(!expand)}
       ref={meshRef}
+      scale={[1, 1, 1]}
       castShadow
       position={position}
     >
@@ -63,9 +64,9 @@ const Group = () => {
   );
 };
 
-const Box = () => {
+const Boxes = () => {
   return (
-    <Canvas shadows camera={{ position: [0, 5, 10], fov: 60 }}>
+    <Canvas shadows camera={{ position: [0, 5, 10], fov: 30 }}>
       <ambientLight intensity={0.3} />
       <directionalLight
         position={[0, 10, 0]}
@@ -91,8 +92,24 @@ const Box = () => {
       />
       <SpinningElement
         {...{
-          size: [3, 2, 1],
+          size: [1, 1, 1],
+          position: [-3, -3, -3],
+          color: "pink",
+          speed: 6,
+        }}
+      />
+      <SpinningElement
+        {...{
+          size: [1, 1, 1],
           position: [0, 1, 0],
+          color: "lightblue",
+          speed: 2,
+        }}
+      />
+      <SpinningElement
+        {...{
+          size: [1, 2, 1],
+          position: [2, -0, 3],
           color: "lightblue",
           speed: 2,
         }}
@@ -109,4 +126,4 @@ const Box = () => {
   );
 };
 
-export default Box;
+export default Boxes;

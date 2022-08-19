@@ -7,7 +7,7 @@ export type ISimpleCanvasProps = React.DetailedHTMLProps<
 
 const SimpleCanvas = (props: ISimpleCanvasProps) => {
   useEffect(() => {
-    lazy(() => import("@webgl/threejs/Box"));
+    lazy(() => import("@webgl/threejs/Boxes"));
   });
   return <canvas {...props}></canvas>;
 };

@@ -3,33 +3,90 @@ import Header from "@view/compositions/Header";
 import TwoPartSection from "@view/components/TwoPartSection";
 import Section from "@view/components/Section";
 import Image from "@view/components/Image";
-import Box from "@webgl/threejs/Box";
+import Planes from "@webgl/threejs/Planes";
+import Boxes from "@webgl/threejs/Boxes";
+import StickySection from "@view/components/StickySection";
 
 export const Landing = () => {
-  const { HeaderProps, WrapperProps, ImageProps, SectionOneProps } =
-    useLanding();
+  const { HeaderProps, WrapperProps, ImageProps } = useLanding();
 
   return (
     <>
+      <div
+        style={{
+          position: "fixed",
+          height: "100%",
+          width: "100%",
+          display: "block",
+          zIndex: "-1000",
+        }}
+      >
+        <Boxes />
+      </div>
       <Header {...HeaderProps} />
-      <Section {...WrapperProps}>
-        <TwoPartSection>
-          <Box />
-          <div>Heisann på deisann</div>
-        </TwoPartSection>
-        <TwoPartSection reverse={true}>
-          <div>This is some text to check if this breaks correctly</div>
-          <Image {...ImageProps} />
-        </TwoPartSection>
-        <TwoPartSection>
-          <div>second</div>
-          <div>first</div>
-        </TwoPartSection>
-        <TwoPartSection reverse={true}>
-          <div>second</div>
-          <div>first</div>
-        </TwoPartSection>
+      <StickySection />
+      <Section>
+        <h1>test</h1>
+        <h1>test</h1>
       </Section>
+      <Section>
+        <h1>test</h1>
+        <h1>test</h1>
+      </Section>
+      <Section>
+        <h1>test</h1>
+        <h1>test</h1>
+      </Section>
+      <Section>
+        <h1>test</h1>
+        <h1>test</h1>
+      </Section>
+      <Section>
+        <h1>test</h1>
+        <h1>test</h1>
+      </Section>
+      <Section>
+        <h1>test</h1>
+        <h1>test</h1>
+      </Section>
+      <Section>
+        <h1>test</h1>
+        <h1>test</h1>
+      </Section>
+      <Section>
+        <h1>test</h1>
+        <h1>test</h1>
+      </Section>
+      <Section>
+        <h1>test</h1>
+        <h1>test</h1>
+      </Section>
+      <Section>
+        <h1>test</h1>
+        <h1>test</h1>
+      </Section>
+      <Section>
+        <h1>test</h1>
+        <h1>test</h1>
+      </Section>
+      <Section>
+        <h1>test</h1>
+        <h1>test</h1>
+      </Section>
+      <Section>
+        <h1>test</h1>
+        <h1>test</h1>
+      </Section>
+      <Section>
+        <h1>test</h1>
+        <h1>test</h1>
+      </Section>
+      <Section>
+        <h1>test</h1>
+        <h1>test</h1>
+      </Section>
+      <Section />
+      <Section />
     </>
   );
 };

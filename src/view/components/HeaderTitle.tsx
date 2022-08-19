@@ -6,7 +6,7 @@ export const defaultStyle: React.CSSProperties = {
   textAlign: "start",
   textTransform: "uppercase",
   width: "100%",
-  fontSize: "7vw",
+  fontSize: "10rem",
   fontWeight: "300",
   display: "flex",
   flexWrap: "wrap",
@@ -26,7 +26,8 @@ const HeaderTitle = ({ title }: IHeaderTitleProps) => {
     <>
       <h1 style={defaultStyle} id="headerTitle">
         {" "}
-        {title} <b>Ulrik Palmstrøm</b>
+        <b>Ulrik Palmstrøm</b>
+        {title}
       </h1>
     </>
   );

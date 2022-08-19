@@ -21,6 +21,7 @@
     "react-transition-group": "^4.4.2",
     "styled-components": "^5.3.5",
     "three": "^0.141.0",
+    "vite-plugin-glsl": "^0.1.2",
     "vite-tsconfig-paths": "^3.4.1"
   },
   "devDependencies": {

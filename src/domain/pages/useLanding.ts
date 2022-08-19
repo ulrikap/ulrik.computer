@@ -41,7 +41,7 @@ const useLanding = (): ILandingProps => {
     WrapperProps: {
       SectionProps: {
         style: {
-          marginTop: "100vh",
+          marginTop: "80vh",
         },
       },
     },
